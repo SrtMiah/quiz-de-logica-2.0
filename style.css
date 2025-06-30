@@ -1,0 +1,222 @@
+.pergunta {
+    display: none;
+}
+.pergunta.ativa {
+    display: block;
+}
+#resultado, #estatica-pontuacao, #gabarito, #feedback-form {
+    display: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+/* container de partículas atrás de todo conteúdo */
+#tsparticles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;         /* atrás de tudo */
+    pointer-events: none; /* cliques passam para o quiz */
+
+    background: linear-gradient(270deg, #9b3e10, #4b0101, #ffae00, #653301);
+    background-size: 800% 800%;
+    animation: animarDegrade 15s ease infinite;
+}
+#tsparticles > canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: transparent !important;
+}
+#main-content {
+    position: relative;
+    z-index: 0;
+}
+@keyframes animarDegrade {
+    0% { background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(255, 255, 255);
+}
+header {
+    text-align: center;
+    padding: 30px 10px 10px;
+}
+.titulo {
+    width: 104%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #fff;
+    text-shadow:
+    0 0 5px rgb(255, 0, 0),
+    0 0 10px rgb(255, 0, 0),
+    0 0 20px rgb(255, 0, 0),
+    0 0 40px rgb(255, 0, 0),
+    0 0 80px rgb(255, 0, 0);
+    text-align: center;
+    margin-top: -2%;
+    margin-left: -2%;
+    
+}
+.subtitulo {
+    margin-top: -10px;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+.introducao {
+    margin-top: -25px;
+    text-shadow:
+    0 0 5px rgb(255, 0, 0),
+    0 0 10px rgb(255, 0, 0),
+    0 0 20px rgb(255, 0, 0),
+    0 0 40px rgb(255, 0, 0),
+    0 0 80px rgb(255, 0, 0);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+.pergunta {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: 0 0 010 rgba(0, 0, 0, 0.3);
+}
+.pergunta h2 {
+    margin-bottom: 10px;
+    text-shadow:
+    0 0 5px rgb(255, 0, 0),
+    0 0 10px rgb(255, 0, 0),
+    0 0 20px rgb(255, 0, 0),
+    0 0 40px rgb(255, 0, 0),
+    0 0 80px rgb(255, 0, 0);
+}
+.pergunta p {
+    margin-bottom: 15px;
+}
+.pergunta img {
+    max-width: 100%;
+    height: auto;
+    margin:0;
+}
+button.proximo {
+    margin-top: 1px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #3a0202;
+    text-shadow:
+    0 0 5px rgb(255, 0, 0),
+    0 0 10px rgb(255, 0, 0),
+    0 0 20px rgb(255, 0, 0),
+    0 0 40px rgb(255, 0, 0),
+    0 0 80px rgb(255, 0, 0);
+    border-radius: 6px;
+    cursor: pointer;
+}
+button.proximo:hover {
+    background-color: #ff0202;
+}
+footer{
+    margin-top: -35px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 7px ;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.rodape a {
+    color: #ffffff;
+    text-shadow:
+    0 0 5px rgb(255, 0, 0),
+    0 0 10px rgb(255, 0, 0),
+    0 0 20px rgb(255, 0, 0),
+    0 0 40px rgb(255, 0, 0),
+    0 0 80px rgb(255, 0, 0);
+    text-decoration: none;
+}
+.pergunta-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: nowrap;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+.opcoes {
+    text-shadow:
+    0 0 5px rgb(255, 0, 0),
+    0 0 10px rgb(255, 0, 0),
+    0 0 20px rgb(255, 0, 0),
+    0 0 40px rgb(255, 0, 0),
+    0 0 80px rgb(255, 0, 0);
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.opcoes label {
+    display: inline-flex;
+    font-size:18px;
+    gap: 8px;
+    cursor: pointer;
+}
+.opcoes input[type="radio"] {
+    margin: 0;
+    appearance: auto;
+    vertical-align: middle;
+    accent-color: rgb(255, 0, );
+}
+.imagem-pato img{
+    max-width: 300px;
+    height: auto;
+}
+
+.botao-centro {
+    text-align: center;
+    margin-top: 30px;
+}
+.proximo {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff0000;
+    color: white;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.proximo:hover {
+    background-color: #b30000;
+}
+@media (max-widtht: 700px) {
+    .pergunta-layout{
+        flex-direction: column;
+    }
+}
